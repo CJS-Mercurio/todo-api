@@ -2,6 +2,12 @@ const mongoose = require("mongoose");
 
 const todoSchema = mongoose.Schema(
   {
+    // user associated with todo
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'User'
+    },
     name: {
       type: String,
       required: [true, "Please add a name of todo"],
